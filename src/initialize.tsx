@@ -56,10 +56,61 @@ const initialize = () => {
     }
     results[playerNames.join(", ")][map] = places
     setLocalStorage("Results", results)
-    updatePointModifier()
 
     // @ts-ignore
-    window.showWinner(playerNames[places[0]])
+    window.showResults(playerNames, places)
+  }
+
+  // @ts-ignore
+  window.clearManyResults = (playerNames: string[], map: string) => {
+    // @ts-ignore
+    playerNames = playerNames.toJs()
+
+    var many_results = getLocalStorage("ManyResults")
+    if (!many_results) {
+      many_results = {}
+    }
+    if (!many_results[playerNames.join(", ")]) {
+      many_results[playerNames.join(", ")] = {}
+    }
+    many_results[playerNames.join(", ")][map] = new Array(
+      playerNames.length
+    ).fill(0)
+
+    setLocalStorage("ManyResults", many_results)
+
+    setLocalStorage("AmountResults", 0)
+  }
+  // @ts-ignore
+  window.setManyResults = (
+    playerNames: string[],
+    places: number[],
+    map: string,
+    how_many: number
+  ) => {
+    // @ts-ignore
+    playerNames = playerNames.toJs()
+    // @ts-ignore
+    places = places.toJs()
+
+    const many_results = getLocalStorage("ManyResults")
+    const amnt = getLocalStorage("AmountResults")
+
+    many_results[playerNames.join(", ")][map][places[0]] += 1
+
+    console.log(
+      "the new many results in position is :" +
+        JSON.stringify(many_results[playerNames.join(", ")][map])
+    )
+    setLocalStorage("ManyResults", many_results)
+
+    setLocalStorage("AmountResults", amnt + 1)
+    if (amnt + 1 == how_many)
+      // @ts-ignore
+      window.showManyResults(
+        playerNames,
+        many_results[playerNames.join(", ")][map]
+      )
   }
 }
 

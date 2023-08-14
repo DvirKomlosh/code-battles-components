@@ -59,9 +59,12 @@ const Simulation = () => {
 
   useEffect(() => {
     // @ts-ignore
-    window.showWinner = (winner: string) => {
+    window.showResults = (
+      player_names: Array<string>,
+      places: Array<number>
+    ) => {
       if (admin) {
-        setWinner(winner)
+        setWinner(player_names[places[0]])
         // @ts-ignore
         if (window.audio) {
           // @ts-ignore
