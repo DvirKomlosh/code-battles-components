@@ -140,42 +140,10 @@ const Simulation = () => {
           transition: "1000ms ease-in-out",
         }}
       >
-        <img
-          src={`/images/teams/${winner?.toLowerCase()}-side.png`}
-          height={100}
-          style={{
-            transform:
-              winner === undefined ? "translateX(-90vw)" : "translateX(70vw)",
-            transition: "1400ms cubic-bezier(0.8, 0, 1, 1)",
-          }}
-        />
         <h1 style={{ fontSize: "8vmin", margin: 0 }}>
           Congratulations, {winner}!
         </h1>
-        <h2 style={{ fontSize: "6vmin", margin: 0 }}>
-          {
-            getLocalStorage("Cached tournament/info")?.teams?.find(
-              (t: any) => t.name === winner
-            )?.members
-          }
-        </h2>
-        <h2
-          style={{
-            fontSize: "4.5vmin",
-            margin: 0,
-            marginBottom: 10,
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          Now ranked {toPlacing(newRank)}!
-          {newRank < oldRank && (
-            <Badge color="green" ml="xs" size="xl">
-              <i className="fa-solid fa-arrow-up" style={{ marginRight: 5 }} />
-              {oldRank - newRank}
-            </Badge>
-          )}
-        </h2>
+
         <img
           src={`/images/teams/${winner?.toLowerCase()}.png`}
           style={{
@@ -188,9 +156,9 @@ const Simulation = () => {
           mt="md"
           color="green"
           leftIcon={<i className="fa-solid fa-play" />}
-          onClick={() => navigate("/round")}
+          onClick={() => navigate("/")}
         >
-          Continue Round
+          Back to Main Page
         </Button>
         <Particles init={particlesInit} options={confetti} />
       </div>
@@ -206,7 +174,7 @@ const Simulation = () => {
             justifyContent: "center",
           }}
         >
-          <p>Fetching APIs...</p>
+          <p>Fetching Bots...</p>
           <Loader />
         </div>
       )}

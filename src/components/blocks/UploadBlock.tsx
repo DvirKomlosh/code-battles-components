@@ -19,7 +19,7 @@ const UploadBlock = () => {
   const navigate = useNavigate()
 
   return (
-    <Block title="APIs" logo="fa-solid fa-code-merge">
+    <Block title="Bots" logo="fa-solid fa-code-merge">
       <Autocomplete
         label="Name"
         icon={<i className="fa-solid fa-tag" />}
@@ -61,7 +61,7 @@ const UploadBlock = () => {
                 .then(() => {
                   notifications.show({
                     title: "Upload successful!",
-                    message: `Your '${name}' API has been uploaded succesfully!`,
+                    message: `Your '${name}' bot has been uploaded succesfully!`,
                     color: "green",
                     icon: <i className="fa-solid fa-check" />,
                   })
@@ -102,7 +102,7 @@ const UploadBlock = () => {
                   setName("")
                   notifications.show({
                     title: "Deletion successful!",
-                    message: `Your '${name}' API has been succesfully deleted!`,
+                    message: `Your '${name}' bot has been succesfully deleted!`,
                     color: "green",
                     icon: <i className="fa-solid fa-check" />,
                   })

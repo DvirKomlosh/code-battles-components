@@ -12,7 +12,7 @@ const RunSimulationBlock = () => {
   const [apis, loading] = useAPIs()
   const [map, setMap] = useLocalStorage<string>({
     key: "Map",
-    defaultValue: "Cards",
+    defaultValue: "NYC",
   })
   const [playerCount, setPlayerCount] = useLocalStorage<number>({
     key: "Player Count",
@@ -33,7 +33,7 @@ const RunSimulationBlock = () => {
 
   const run10NoUI = () => {
     if (loading) {
-      console.error("Loading APIs, cannot run simulation yet!")
+      console.error("Loading Bots, cannot run simulation yet!")
       return
     }
     setRunningNoUI(true)
@@ -46,7 +46,7 @@ const RunSimulationBlock = () => {
   }
   const run50NoUI = () => {
     if (loading) {
-      console.error("Loading APIs, cannot run simulation yet!")
+      console.error("Loading Bots, cannot run simulation yet!")
       return
     }
     setRunningNoUI(true)
@@ -59,7 +59,7 @@ const RunSimulationBlock = () => {
   }
   const run100NoUI = () => {
     if (loading) {
-      console.error("Loading APIs, cannot run simulation yet!")
+      console.error("Loading Bots, cannot run simulation yet!")
       return
     }
     setRunningNoUI(true)
@@ -72,7 +72,7 @@ const RunSimulationBlock = () => {
   }
   const run1000NoUI = () => {
     if (loading) {
-      console.error("Loading APIs, cannot run simulation yet!")
+      console.error("Loading Bots, cannot run simulation yet!")
       return
     }
     setRunningNoUI(true)
@@ -86,7 +86,7 @@ const RunSimulationBlock = () => {
 
   const runNoUI = () => {
     if (loading) {
-      console.error("Loading APIs, cannot run simulation yet!")
+      console.error("Loading Bots, cannot run simulation yet!")
       return
     }
     setRunningNoUI(true)

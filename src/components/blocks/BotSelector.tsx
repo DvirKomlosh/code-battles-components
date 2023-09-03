@@ -43,7 +43,7 @@ const BotSelector: React.FC<Props> = ({
           key={index}
           mt="xs"
           icon={<i className="fa-solid fa-robot" />}
-          label={`Player ${index + 1} API`}
+          label={`Player ${index + 1} Bot`}
           value={playerAPIs[index]}
           onChange={(api) => {
             if (api) {

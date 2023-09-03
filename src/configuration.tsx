@@ -27,7 +27,7 @@ interface CodeBattlesFullConfiguration
 export const DEFAULT_CONFIGURATION: Partial<CodeBattlesOptionalConfiguration> =
   {
     primaryColor: "#0bb04f",
-    title: "Code Battles",
+    title: "Battlesnake",
     admin: "admin",
   }
 
