@@ -98,19 +98,19 @@ const initialize = () => {
 
     many_results[playerNames.join(", ")][map][places[0]] += 1
 
-    console.log(
-      "the new many results in position is :" +
-        JSON.stringify(many_results[playerNames.join(", ")][map])
-    )
     setLocalStorage("ManyResults", many_results)
 
     setLocalStorage("AmountResults", amnt + 1)
-    if (amnt + 1 == how_many)
+    if (amnt + 1 == how_many) {
+      console.log(
+        "Results:" + JSON.stringify(many_results[playerNames.join(", ")][map])
+      )
       // @ts-ignore
       window.showManyResults(
         playerNames,
         many_results[playerNames.join(", ")][map]
       )
+    }
   }
 }
 

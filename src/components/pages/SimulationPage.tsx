@@ -89,8 +89,6 @@ const Simulation = () => {
 
   useEffect(() => {
     if (!loading && players && playerapis) {
-      console.log(apis)
-      console.log("Here", players)
       pyscript.run(
         `initialize_simulation("${map}", ${JSON.stringify(
           players
